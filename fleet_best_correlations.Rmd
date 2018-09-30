@@ -149,264 +149,217 @@ plotLagComparison(ga_admin_nochn_all[Date >= teststart & Date <= testend],
                     dlag = 0)
 ```
 
-#### All locations, Organic Search, UniquePageviews, corr: 0.830
+#### United States, all channels, SessionsNew, corr: 0.929
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_allws_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "UniquePageviews",
-#                     dlag = 1)
+plotLagComparison(movingAverage(ga_admin_nochn_us[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "SessionsNew",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_allws_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "UniquePageviews",
-#                     dlag = 1)
+plotLagComparisonSameScale(movingAverage(ga_admin_nochn_us[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "SessionsNew",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_allws_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
+# teststart <- "2017-07-01"  # Values for Full Data
+# testend <- "2018-06-11" 
+# maxlag <- 31
+# visitordata <- fleet_visitors[Date >= teststart & Date <= as.Date(testend) + maxlag]
+# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_admin_nochn_us[Date >= teststart & Date <= testend]),
 #                                       visitors = movingAverage(visitordata)),
-#                  select = "UniquePageviews",
+#                  select = "SessionsNew",
 #                  plottitle = "")
+# teststart <- "2017-07-01"  # Values for Full Data
+# testend <- "2018-07-12" # Returning to whole range to show a complete graph
+# maxlag <- 31
+# visitordata <- fleet_visitors[Date >= teststart & Date <= as.Date(testend) + maxlag]
 ```
 
-#### Domestics, Organic Search, UniquePageviews, corr: 0.819
+#### Domestics, all channels, SessionsNew, corr: 0.921
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_allws_chn_do[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "UniquePageviews",
-#                     dlag = 1)
+plotLagComparison(movingAverage(ga_admin_nochn_do[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "SessionsNew",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_allws_chn_do[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "UniquePageviews",
-#                     dlag = 1)
+plotLagComparisonSameScale(movingAverage(ga_admin_nochn_do[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "SessionsNew",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_allws_chn_do[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
+# teststart <- "2017-07-01"  # Values for Full Data
+# testend <- "2018-06-11" 
+# maxlag <- 31
+# visitordata <- fleet_visitors[Date >= teststart & Date <= as.Date(testend) + maxlag]
+# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_admin_nochn_do[Date >= teststart & Date <= testend]),
 #                                       visitors = movingAverage(visitordata)),
-#                  select = "UniquePageviews",
+#                  select = "SessionsNew",
 #                  plottitle = "")
+# teststart <- "2017-07-01"  # Values for Full Data
+# testend <- "2018-07-12" # Returning to whole range to show a complete graph
+# maxlag <- 31
+# visitordata <- fleet_visitors[Date >= teststart & Date <= as.Date(testend) + maxlag]
 ```
 
 
-## Plan your visit
+## Exhibitions V2
 
-#### All locations, Organic Search, Users, corr: 0.792
+#### All locations, all channels, UsersOld, corr: 0.896
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_plan_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Users",
-#                     dlag = 1)
+plotLagComparison(movingAverage(ga_exhib2_nochn_all[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "UsersOld",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_plan_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Users",
-#                     dlag = 1)
+plotLagComparisonSameScale(movingAverage(ga_exhib2_nochn_all[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "UsersOld",
+                    dlag = 0)
 ```
 
-```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_plan_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                                       visitors = movingAverage(visitordata)),
-#                  select = "Users",
-#                  plottitle = "")
-```
-
-#### United States, Organic Search, UniquePageviews, corr: 0.792
+#### United States, all channels, UsersOld, corr: 0.896
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_plan_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "UniquePageviews",
-#                     dlag = 1)
+plotLagComparison(movingAverage(ga_exhib2_nochn_us[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "UsersOld",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_plan_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "UniquePageviews",
-#                     dlag = 1)
+plotLagComparisonSameScale(movingAverage(ga_exhib2_nochn_us[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "UsersOld",
+                    dlag = 0)
 ```
 
-```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_plan_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                                       visitors = movingAverage(visitordata)),
-#                  select = "UniquePageviews",
-#                  plottitle = "")
-```
-
-#### Domestics, Organic Search, Users, corr: 0.779
+#### Domestics, all channels, UsersOld, corr: 0.889
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_plan_chn_do[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Users",
-#                     dlag = 1)
+plotLagComparison(movingAverage(ga_exhib2_nochn_do[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "UsersOld",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_plan_chn_do[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Users",
-#                     dlag = 1)
-```
-
-```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_plan_chn_do[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                                       visitors = movingAverage(visitordata)),
-#                  select = "Users",
-#                  plottitle = "")
+plotLagComparisonSameScale(movingAverage(ga_exhib2_nochn_do[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "UsersOld",
+                    dlag = 0)
 ```
 
 
-## Tickets
+## Shows
 
-#### United States, Organic Search, Users, corr: 0.822
+#### All locations, Organic Search, Users, corr: 0.884
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_tickets_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Users",
-#                     dlag = 1)
+plotLagComparison(movingAverage(ga_shows_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Users",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_tickets_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Users",
-#                     dlag = 1)
+plotLagComparisonSameScale(movingAverage(ga_shows_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Users",
+                    dlag = 0)
 ```
 
-```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_tickets_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                                       visitors = movingAverage(visitordata)),
-#                  select = "Users",
-#                  plottitle = "")
-```
-
-#### United States, All channels, UsersOld, corr: 0.819
+#### United States, Organic Search, Users, corr: 0.884
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_tickets_nochn_us[Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "UsersOld",
-#                     dlag = 1)
+plotLagComparison(movingAverage(ga_shows_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Users",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_tickets_nochn_us[Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "UsersOld",
-#                     dlag = 1)
+plotLagComparisonSameScale(movingAverage(ga_shows_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Users",
+                    dlag = 0)
 ```
 
-```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_tickets_nochn_us[Date >= teststart & Date <= testend]),
-#                                       visitors = movingAverage(visitordata)),
-#                  select = "UsersOld",
-#                  plottitle = "")
-```
-
-#### All locations, Organic Search, Users, corr: 0.819
+#### All locations, all channels, Users, corr: 0.866
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_tickets_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Users",
-#                     dlag = 1)
+plotLagComparison(movingAverage(ga_shows_nochn_us[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Users",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_tickets_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Users",
-#                     dlag = 1)
-```
-
-```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_tickets_chn_all[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                                       visitors = movingAverage(visitordata)),
-#                  select = "Users",
-#                  plottitle = "")
+plotLagComparisonSameScale(movingAverage(ga_shows_nochn_us[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Users",
+                    dlag = 0)
 ```
 
 
-## Visit
+## All Website
 
-#### United States, All channels, Sessions, corr: 0.789
+#### Domestics, All channels, Pageviews, corr: 0.854
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_visit_nochn_us[Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Sessions",
-#                     dlag = 2)
+plotLagComparison(movingAverage(ga_allws_nochn_do[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Pageviews",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_visit_nochn_us[Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Sessions",
-#                     dlag = 2)
+plotLagComparisonSameScale(movingAverage(ga_allws_nochn_do[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Pageviews",
+                    dlag = 0)
 ```
 
-```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_visit_nochn_us[Date >= teststart & Date <= testend]),
-#                                       visitors = movingAverage(visitordata)),
-#                  select = "Sessions",
-#                  plottitle = "")
-```
-
-#### United States, Organic Search, Sessions, corr: 0.788
+#### Domestics, Organic Search, Pageviews, corr: 0.839
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_visit_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Sessions",
-#                     dlag = 2)
+plotLagComparison(movingAverage(ga_allws_chn_do[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Pageviews",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_visit_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Sessions",
-#                     dlag = 2)
+plotLagComparisonSameScale(movingAverage(ga_allws_chn_do[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Pageviews",
+                    dlag = 0)
 ```
 
-```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_visit_chn_us[Channel == "Organic Search" & Date >= teststart & Date <= testend]),
-#                                       visitors = movingAverage(visitordata)),
-#                  select = "Sessions",
-#                  plottitle = "")
-```
-
-#### All locations, All channels, Sessions, corr: 0.779
+#### United States, All channels, Pageviews, corr: 0.824
 
 ```{r echo=FALSE, fig.width=10, warning=FALSE}
-# plotLagComparison(movingAverage(ga_visit_nochn_all[Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Sessions",
-#                     dlag = 2)
+plotLagComparison(movingAverage(ga_allws_nochn_us[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Pageviews",
+                    dlag = 0)
 ```
 
 ```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotLagComparisonSameSacle(movingAverage(ga_visit_nochn_all[Date >= teststart & Date <= testend]),
-#                     movingAverage(visitordata),
-#                     metric = "Sessions",
-#                     dlag = 2)
-```
-
-```{r echo=FALSE, fig.width=10, fig.height=2.5, warning=FALSE}
-# plotCorrelations(getCorrelationMatrix(gametrics = movingAverage(ga_visit_nochn_all[Date >= teststart & Date <= testend]),
-#                                       visitors = movingAverage(visitordata)),
-#                  select = "Sessions",
-#                  plottitle = "")
+plotLagComparisonSameScale(movingAverage(ga_allws_nochn_us[Date >= teststart & Date <= testend]),
+                    movingAverage(visitordata),
+                    metric = "Pageviews",
+                    dlag = 0)
 ```

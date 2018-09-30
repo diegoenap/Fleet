@@ -1,5 +1,5 @@
 ---
-title: "Fleet Science Center - Best Correlations"
+title: "Fleet Science Center - Test Periods"
 author: "Diego Enriquez"
 date: "29/9/2018"
 output: html_document
@@ -111,7 +111,7 @@ testend <- "2017-08-31"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
@@ -129,7 +129,7 @@ testend <- "2017-11-30"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
@@ -147,7 +147,7 @@ testend <- "2018-02-28"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
@@ -165,14 +165,14 @@ testend <- "2018-05-31"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
                     plotstart = teststart,
                     plotend = testend,
                     metric = metric,
-                    dlag = 0)
+                    dlag = 1)
 ```
 
 ### Summer 2018
@@ -183,113 +183,113 @@ testend <- "2018-07-12"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
                     plotstart = teststart,
                     plotend = testend,
                     metric = metric,
-                    dlag = 2)
+                    dlag = 13)
 ```
 
 ## By Holidays
 
-Source: http://www.sfusd.edu/en/news/calendars/academic-calendar.html
+Source: http://blog.activityhero.com/san-diego-unified-school-calendar/#sthash.n2hzZ9EV.dpbs
 
 ### Summer break 2017
 
 ```{r echo=FALSE, fig.width=10}
-# #teststart <- "2017-05-27" 
-# teststart <- "2017-05-06" 
-# testend <- "2017-08-20"
-# 
-# visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
-# gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-# getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
-# 
-# plotLagComparisonv2(movingAverage(gamericdata),
-#                     movingAverage(visitordata),
-#                     plotstart = teststart,
-#                     plotend = testend,
-#                     metric = metric,
-#                     dlag = 1)
+#teststart <- "2017-05-27"
+teststart <- "2017-07-01"
+testend <- "2017-08-27"
+
+visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
+gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
+
+plotLagComparisonv2(movingAverage(gamericdata),
+                    movingAverage(visitordata),
+                    plotstart = teststart,
+                    plotend = testend,
+                    metric = metric,
+                    dlag = 0)
 ```
 
 ### Thanksgiving recess 2017
 
 ```{r echo=FALSE, fig.width=10}
-# #teststart <- "2017-11-18" 
-# teststart <- "2017-10-28" 
-# testend <- "2017-11-26"
-# 
-# visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
-# gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-# getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
-# 
-# plotLagComparisonv2(movingAverage(gamericdata),
-#                     movingAverage(visitordata),
-#                     plotstart = teststart,
-#                     plotend = testend,
-#                     metric = metric,
-#                     dlag = 15)
+#teststart <- "2017-11-18"
+teststart <- "2017-10-28"
+testend <- "2017-11-26"
+
+visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
+gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
+
+plotLagComparisonv2(movingAverage(gamericdata),
+                    movingAverage(visitordata),
+                    plotstart = teststart,
+                    plotend = testend,
+                    metric = metric,
+                    dlag = 15)
 ```
 
 ### Winter break 2017
 
 ```{r echo=FALSE, fig.width=10}
-# #teststart <- "2017-12-22" 
-# teststart <- "2017-12-01" 
-# testend <- "2018-01-07"
-# 
-# visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
-# gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-# getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
-# 
-# plotLagComparisonv2(movingAverage(gamericdata),
-#                     movingAverage(visitordata),
-#                     plotstart = teststart,
-#                     plotend = testend,
-#                     metric = metric,
-#                     dlag = 0)
+#teststart <- "2017-12-16"
+teststart <- "2017-11-25"
+testend <- "2018-01-01"
+
+visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
+gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
+
+plotLagComparisonv2(movingAverage(gamericdata),
+                    movingAverage(visitordata),
+                    plotstart = teststart,
+                    plotend = testend,
+                    metric = metric,
+                    dlag = 0)
 ```
 
 ### Spring break 2018
 
 ```{r echo=FALSE, fig.width=10}
-# #teststart <- "2018-03-24" 
-# teststart <- "2018-03-03" 
-# testend <- "2018-04-01"
-# 
-# visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
-# gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-# getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
-# 
-# plotLagComparisonv2(movingAverage(gamericdata),
-#                     movingAverage(visitordata),
-#                     plotstart = teststart,
-#                     plotend = testend,
-#                     metric = metric,
-#                     dlag = 11)
+#teststart <- "2018-03-24"
+teststart <- "2018-03-03"
+testend <- "2018-04-01"
+
+visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
+gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
+
+plotLagComparisonv2(movingAverage(gamericdata),
+                    movingAverage(visitordata),
+                    plotstart = teststart,
+                    plotend = testend,
+                    metric = metric,
+                    dlag = 1)
 ```
 
 ### Summer break 2018
 
 ```{r echo=FALSE, fig.width=10}
-# #eststart <- "2018-06-06" 
-# teststart <- "2018-05-16" 
-# testend <- "2018-06-30"
-# 
-# visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
-# gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-# getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
-# 
-# plotLagComparisonv2(movingAverage(gamericdata),
-#                     movingAverage(visitordata),
-#                     plotstart = teststart,
-#                     plotend = testend,
-#                     metric = metric,
-#                     dlag = 2)
+#eststart <- "2018-06-13"
+teststart <- "2018-05-23"
+testend <- "2018-07-12"
+
+visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
+gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
+
+plotLagComparisonv2(movingAverage(gamericdata),
+                    movingAverage(visitordata),
+                    plotstart = teststart,
+                    plotend = testend,
+                    metric = metric,
+                    dlag = 13)
 ```
 
 
@@ -298,12 +298,12 @@ Source: http://www.sfusd.edu/en/news/calendars/academic-calendar.html
 ### July 2017
 
 ```{r echo=FALSE, fig.width=10}
-teststart <- "2017-07-01"
+teststart <- "2017-06-10"
 testend <- "2017-07-31"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
@@ -321,7 +321,7 @@ testend <- "2017-08-31"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
@@ -339,7 +339,7 @@ testend <- "2017-09-30"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
@@ -357,14 +357,14 @@ testend <- "2017-10-31"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
                     plotstart = teststart,
                     plotend = testend,
                     metric = metric,
-                    dlag = 1)
+                    dlag = 6)
 ```
 
 ### November 2017
@@ -375,14 +375,14 @@ testend <- "2017-11-30"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
                     plotstart = teststart,
                     plotend = testend,
                     metric = metric,
-                    dlag = 1)
+                    dlag = 14)
 ```
 
 ### December 2017
@@ -393,7 +393,7 @@ testend <- "2017-12-31"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
@@ -411,7 +411,7 @@ testend <- "2018-01-31"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
@@ -429,7 +429,7 @@ testend <- "2018-02-28"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
@@ -447,7 +447,7 @@ testend <- "2018-03-31"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
@@ -465,14 +465,14 @@ testend <- "2018-04-30"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
                     plotstart = teststart,
                     plotend = testend,
                     metric = metric,
-                    dlag = 1)
+                    dlag = 0)
 ```
 
 ### May 2018
@@ -483,14 +483,14 @@ testend <- "2018-05-31"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
                     plotstart = teststart,
                     plotend = testend,
                     metric = metric,
-                    dlag = 0)
+                    dlag = 1)
 ```
 
 ### June 2018
@@ -501,13 +501,13 @@ testend <- "2018-06-30"
 
 visitordata <- fleet_visitors[Date >= as.Date(teststart) + maxlag & Date <= testend]
 gamericdata <- ga_admin_nochn_all[Date >= teststart & Date <= as.Date(testend)]
-getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[2,]  # 11 UniquePageviews
+getMaxCorrelations(getCorrelationMatrixv2(movingAverage(gamericdata), movingAverage(visitordata), maxlag = maxlag))[4,]  # 11 UniquePageviews
 
 plotLagComparisonv2(movingAverage(gamericdata),
                     movingAverage(visitordata),
                     plotstart = teststart,
                     plotend = testend,
                     metric = metric,
-                    dlag = 1)
+                    dlag = 0)
 ```
 
